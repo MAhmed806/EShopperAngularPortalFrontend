@@ -55,6 +55,7 @@
               <a type="button" class="text-primary"></a>
               <a href="" type="button" class="text-primary">Already a User? Login</a>
             </div>
+            
             <div class="input-group">
               <button type="submit" class="btn" [ngClass]="{'btn-success':registerform.valid && registerform.value.ConfirmPassword==registerform.value.PasswordHash,'btn-danger':!registerform.valid || registerform.value.ConfirmPassword!=registerform.value.PasswordHash}" [disabled]="!registerform.valid || registerform.value.PasswordHash!= registerform.value.ConfirmPassword">Register</button>
             </div>
