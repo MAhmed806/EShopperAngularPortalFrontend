@@ -1,0 +1,35 @@
+ <!-- Topbar Start -->
+ <div class="container-fluid">
+    <div class="row align-items-center justify-content-between py-3 px-xl-1" style="border-bottom: 1px solid lightblue;">
+        <div class="col-lg-3 d-none d-lg-block">
+            <a href="" class="text-decoration-none">
+                <h1 class="m-0 display-5 font-weight-semi-bold"><span class="text-primary font-weight-bold border px-3 mr-1 " >E</span>Shopper Portal</h1>
+            </a>
+        </div>
+        <div *ngIf="Role=='Manager'" class=" text-dark row px-xl-1">
+            <a href="/productslist" class="nav-link text-dark ">Products</a>
+            <a href="/producttypeslist" class="nav-link text-dark">Product Types</a>
+            <a href="/orderslist" class="nav-link text-dark">Orders</a>
+            <a href="/salesview" class="nav-link text-dark ">Sales View</a>
+
+        </div>
+        <div *ngIf="Role=='Admin'" class=" text-dark row px-xl-1">
+            <a href="/roleslist" class="nav-link text-dark ">Roles</a>
+            <a href="/addrole" class="nav-link text-dark">Add Role</a>
+
+        </div>
+        <div class="row text-dark px-xl-1">
+            <a href="http://localhost:4200/" class="nav-link text-dark ">Go To Main Website</a>
+            <div class="px-3" style="border-left:1px solid lightblue ;">
+                <div *ngIf="loggedin"  class="row ml-auto py-0">
+                    <a class="text-primary nav-link">Hello {{Username}}</a>
+                    <a type="button" (click)="Logout()"  class="text-primary nav-link">Logout</a>
+                </div>
+                <div  *ngIf="!loggedin" class="row ml-auto py-0">
+                    <a href="" class="nav-link text-primary">Login </a>
+                    <a href="/register" type="button"  class="nav-link text-primary">Register</a>
+                </div>
+            </div>
+        </div>
+    </div>
+ </div>

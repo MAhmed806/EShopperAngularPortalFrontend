@@ -1,0 +1,183 @@
+<div class="container-fluid" style="margin-top:10px">    
+    <div>
+        <h4 class="text-primary">Order Details</h4>
+  <form [formGroup]="myform" (submit)="Submit()" enctype="multipart/form-data">
+        <div class="p-4 rounded border row">               
+            <div class="col-8">
+                <div class="form-group row">
+                    <div class="col-4">
+                        <label>Order Id</label>
+                    </div>
+                    <div class="col-8">
+                        <input formControlName="Id" readonly="readonly" class="form-control" />
+                        <span asp-validation-for="myorder.Id" class="text-danger"></span>
+                    </div>
+
+                </div>
+                    <div class="form-group row">
+                        <div class="col-4">
+                            <label asp-for="myorder.UserId">User Id</label>
+                        </div>
+                        <div class="col-8">
+                            <input formControlName="UserId" readonly="readonly" readonly="readonly" class="form-control" />
+                        </div>
+                        <span asp-validation-for="myorder.UserId" class="text-danger"></span>
+                    </div>
+                <div class="form-group row">
+                    <div class="col-4">
+                        <label asp-for="myorder.CustomerName">Customer Name</label>
+                    </div>
+                    <div class="col-8">
+                            <input formControlName="CustomerName" readonly="readonly" class="form-control" />
+                    </div>
+                    <span asp-validation-for="myorder.CustomerName" class="text-danger"></span>
+                </div>
+                <div class="form-group row">
+                    <div class="col-4">
+                        <label asp-for="myorder.CustomerPhone">Customer Phone</label>
+                    </div>
+                    <div class="col-8">
+                        <input formControlName="CustomerPhone" readonly="readonly" readonly="readonly" class="form-control" />
+                    </div>
+                    <span asp-validation-for="myorder.CustomerPhone" class="text-danger"></span>
+                </div>
+                <div class="form-group row">
+                        <div class="col-4">
+                            <label asp-for="myorder.CustomerEmail">Customer Email</label>
+                        </div>
+                        <div class="col-8">
+                            <input formControlName="CustomerEmail" readonly="readonly" readonly="readonly" class="form-control" />
+                        </div>
+                        <span asp-validation-for="myorder.CustomerEmail" class="text-danger"></span>
+                </div>
+                <div class="form-group row">
+                        <div class="col-4">
+                            <label asp-for="myorder.CustomerAddress">Customer Address</label>
+                        </div>
+                        <div class="col-8">
+                            <input formControlName="CustomerAddress" readonly="readonly" readonly="readonly" class="form-control" />
+                        </div>
+                        <span asp-validation-for="myorder.CustomerAddress" class="text-danger"></span>
+                </div>
+                <div class="form-group row">
+                    <div class="col-4">
+                        <label asp-for="myorder.OrderDate">Order Date</label>
+                    </div>
+                    <div class="col-8">
+                        <input formControlName="OrderDate" readonly type="datetime" readonly="readonly" class="form-control" />
+                    </div>
+                    <span asp-validation-for="myorder.OrderDate" class="text-danger"></span>
+                </div>
+                    <div class="form-group row">
+                        <div class="col-4">
+                            <label asp-for="myorder.OrderCost">Order Cost</label>
+                        </div>
+                        <div class="col-8">
+                            <input formControlName="OrderCost" readonly="readonly" readonly="readonly" class="form-control" />
+                        </div>
+                        <span asp-validation-for="myorder.OrderCost" class="text-danger"></span>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-4">
+                            <label asp-for="myorder.OrderDate">Payment Method</label>
+                        </div>
+                        <div class="col-8">
+                            <input formControlName="PaymentMethod" readonly="readonly" readonly="readonly" class="form-control" />
+                        </div>
+                        <span asp-validation-for="myorder.OrderDate" class="text-danger"></span>
+                    </div>
+                <div class="form-group row">
+                    <div class="col-4">
+                        <label asp-for="myorder.DeliveryDate">Delivery Date</label>
+                    </div>
+                    <div class="col-8">
+                        <input formControlName="DeliveryDate" type="datetime" class="form-control" />
+                    </div>
+                    <span asp-validation-for="myorder.DeliveryDate" class="text-danger"></span>
+                </div>
+                <div class="form-group row">
+                    <div class="col-4">
+                        <label asp-for="myorder.OrderStatus">Order Status</label>
+                    </div>
+                    <div class="col-8">
+                         <select formControlName="OrderStatus" class="form-control" asp-for="myorder.OrderStatus">
+                            <option value="Order Placed">Placed</option>
+                            <option value="Order Confirmed">Confirmed</option>
+                            <option value="Order Dispatched">Dispatched</option>
+                            <option value="Order Delivered">Delivered</option>
+                            <option value="Order Cancelled">Cancelled</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-4">
+                        <label asp-for="myorder.DeliveryDate">Payment Status</label>
+                    </div>
+                    <div class="col-8">
+                        <select formControlName="PaymentStatus" class="form-control" asp-for="myorder.OrderStatus">
+                           <option value="succeeded">Succeeded</option>
+                           <option value="refunded">Refund</option>
+                           <option value="pending">Pending</option>
+                           <option value="failed">Failed</option>
+                       </select>
+                   </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-4">
+                        <label asp-for="myorder.DeliveryDate">Refund Status</label>
+                    </div>
+                    <div class="col-8">
+                        <select formControlName="RefundStatus" class="form-control" asp-for="myorder.OrderStatus">
+                            <option value="na">---</option> 
+                            <option value="succeeded">Succeeded</option>   
+                           <option value="pending">Pending</option>
+                           <option value="failed">Failed</option>
+                       </select>
+                   </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-4">
+                        <Label></Label>
+                    </div>
+                        <div class="col-8">
+                            <input class="btn btn-success" type="submit" style="margin-right:5px" value="Update Order"/>
+                            <a href="/orderslist" class="btn btn-success text-secondary">Home</a>
+                        </div><br />
+                        
+                    
+                
+                </div>
+           </div>
+        </div>
+  </form>
+          <div><br />
+            <h4 class="text-primary">Order Products</h4>
+                <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                
+                                <td>Product Id</td>
+                                <td>Product Name</td>
+                                <td>Product Color</td>
+                                <td>Product Image</td>
+                                <td>Product Quantity</td>
+                                <td>Product Type</td>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                               <tr *ngFor="let od of orderdetails" >
+                                 <td>{{od.product.id}}</td>
+                                 <td>{{od.product.name}}</td>
+                                 <td>{{od.product.pColor}}</td>
+                                 <td><img src="{{od.product.image}}" height="100" width="auto"></td>            
+                                 <td >{{od.productQuantity}}</td>
+                                 <td>{{od.product.productTypes.productType}}<td>
+                                </tr>
+                        </tbody>
+                </table>
+
+          </div>
+
+    </div>
+</div>

@@ -1,0 +1,78 @@
+<div class="container-fluid" style="margin-top:10px">
+<h2 class="text-info">Edit Product</h2>
+<form [formGroup]="myForm" (submit)="Submit()" enctype="multipart/form-data">
+    <div class="p-4 rounded border row">
+        <div class="col-8">
+            <div class="form-group row">
+                <div class="col-4">
+                    <label>Name</label>
+                </div>
+                <div class="col-8">
+                    <input formControlName="Name"  class="form-control"/>
+                </div>
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group row">
+                <div class="col-4">
+                    <label >Price</label>
+                </div>
+                <div class="col-8">
+                    <input formControlName="Price" type="number"  class="form-control"/>
+                </div>
+                <span asp-validation-for="Price" class="text-danger"></span>
+            </div>
+            <div class="form-group row ">
+                <div class="col-4">
+                    <label asp-for="Image">Image</label>
+                    <input type="hidden" formControlName="Image"/>
+                </div>
+                <div class="col-8">
+                    <input  class="form-control file-input" type="file" (change)="onFileSelected($event)"/>
+                </div>  
+            </div>
+            <div class="form-group row">
+                <div class="col-4">
+                    <label>Color</label>
+                </div>
+                <div class="col-8">
+                    <input formControlName="PColor" type="text"  class="form-control" />
+                </div>
+                <span asp-validation-for="PColor" class="text-danger"></span>
+            </div>
+            <div class="form-group row">
+                <div class="col-4">
+                    <label >Available Quantity</label>
+                </div>
+                <div class="col-8">
+                    <input formControlName="Availablequantity" type="number" class="form-control"/>
+                </div>
+                <span asp-validation-for="Price" class="text-danger"></span>
+            </div>
+            <div class="form-group row">
+                <div class="col-4">
+                    <label asp-for="aroductTypeID">Product Type</label>
+                </div>
+                <div class="col-8">
+                    <select formControlName="ProductTypeID"  class="form-control">
+                        <option type="number" *ngFor="let ptype of producttypes" [value]="ptype.id" >{{ptype.productType}}</option>
+                    </select>
+                   
+                </div>
+                <span asp-validation-for="ProductTypeID" class="text-danger"></span>
+            </div>
+    
+            <div class="form-group row">
+                <div class="col-4"></div>
+                <div class="col-8 ">
+                    <input type="submit" class="btn btn-success" value="Update" style="margin-right:10px;"/>
+                    <a href="/productslist" class="btn btn-info text-secondary">Back to List</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-3">
+            <img src="{{myimage}}" width="auto" height="300px" style="border-radius: 5px;border: 1px solid #efefef"/>
+        </div>
+       
+    </div>
+</form>
+</div>

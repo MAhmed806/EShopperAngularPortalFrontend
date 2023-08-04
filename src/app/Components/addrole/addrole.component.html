@@ -1,0 +1,18 @@
+<div class=" container-fluid" style="margin-top:10px">
+<h1>CreateRole</h1>
+<hr />
+<div class="row">
+    <div class="col-md-4"><span class="text-success">{{message}}</span>
+        <form [formGroup]="myform" (submit)="Submit()" asp-action="CreateRole">
+            <div class="form-group">
+                <label class="control-label">Role Name</label>
+                <input type="text" formControlName="RoleName" asp-for="RoleName" class="form-control" placeholder="Enter Role Name Here" />
+                <span *ngIf="myform.touched && !myform.valid" class="text-danger">Required</span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-success" [disabled]="!myform.valid" />
+            </div>
+        </form>
+    </div>
+</div>
+</div>

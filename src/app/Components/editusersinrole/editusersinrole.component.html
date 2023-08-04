@@ -1,0 +1,15 @@
+<div class="container-fluid" style="margin-top:10px">
+    <form id="ssddtf">
+        <div class="d-lg-inline-flex">
+                <h2 class="justify-content-left">Add or Remove Users From {{role.name}} Role</h2>
+        </div><div class="d-md-block justify-content-end">
+            <button (click)="Update()" id="submitbutton"class="btn btn-success" style="width:auto;margin-right:10px">Update</button>
+            <a class="btn btn-danger" style="width:auto" (click)="goback()">Cancel</a></div>
+        <div><hr /></div>
+        <table style="width:100%" id="helloworld"  datatable [dtOptions]="dtOptions" class="table table-striped">
+        </table>
+     </form>
+
+
+
+</div>

@@ -1,0 +1,28 @@
+<div class="container-fluid" style="margin-top:10px">
+    <h3 class="text-primary">Product Types</h3>
+    <p>
+        <a style="color:darkcyan" href="/addproducttype">Create New</a>
+    </p>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Product Type</th>
+                <th>Image</th>
+            </tr>
+        </thead>
+        <tbody>                
+            <tr *ngFor="let ptype of producttypes">
+    
+                <td>{{ptype.productType}}
+                 </td>
+                 <td><img src="{{ptype.image}}" height="40px" width="auto" /></td>
+                    <td>
+                    <a type="button" class="btn btn-primary" style="margin-right: 5px;" (click)="Edit(ptype.id)" >Edit</a> 
+                    <a type="button" class="btn btn-danger" (click)="Delete(ptype.id)">Delete</a>
+                </td>
+            </tr>
+    
+        </tbody>
+    </table>
+    
+</div>

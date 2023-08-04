@@ -1,0 +1,30 @@
+<div class="container-fluid" style="margin-top:10px">
+    <h2 class="text-info">Create New Product Type</h2>
+    <div class="row justify-content-between">
+        <div class="col-lg-4">
+
+            <form [formGroup]="myForm" (submit)="Submit()"  method="post" enctype="multipart/form-data">
+                <div   class="text-danger"></div>
+                <div class="">
+                    <label asp-for="ProductType" class="control-label">Enter Product Type</label>
+                    <input formControlName="ProductType" asp-for="ProductType" class="form-control" />
+                    <span asp-validation-for="ProductType" class="text-danger"></span>
+                </div>
+                <br>
+                <div class="form-group">
+                    <label asp-for="Image" class="custom-file">Select Image</label>
+                    <input id="image-file" asp-for="Image" class="form-control" type="file" (change)="showImagePreview();onFileSelected($event)" />
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Create" class="btn btn-success" [disabled]="!myForm.valid" style="margin-right:10px" />
+                    <a href="/producttypeslist" class="btn btn-info text-secondary">Back to List</a>
+                </div>
+            </form>
+    
+    </div>
+    <div class="col-lg-4" id="image-preview">
+        <img id="img" width="auto" height="300px" style="border-radius: 5px;border: 1px solid #efefef"/>
+    </div>
+    </div>
+
+</div>

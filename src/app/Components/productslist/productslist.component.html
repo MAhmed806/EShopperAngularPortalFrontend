@@ -1,0 +1,45 @@
+<div class="container-fluid" style="margin-top:10px;">
+<h3 class="text-primary">Products</h3>
+    <p>
+        <a href="/addproduct" type="button" style="color:darkcyan">Create New</a>
+    </p>
+    <table class="table table-striped ">
+        <thead>
+            <tr>
+                <th>Name
+                </th>
+                <th>Price
+                </th>
+                <th>Color
+                </th>
+                <th>Available Quantity
+                </th>
+                <th> Product Type
+                </th>
+                <th>Image</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let product of products" style="align-content:center">
+                <td>{{product.name}}
+                </td>
+                <td>{{product.price}}
+                </td>
+                <td>{{product.pColor}}
+                </td>
+                <td>{{product.availablequantity}}
+                </td>
+                <td>
+                    {{product.productTypes.productType}}
+                </td>
+                    <td><img src="{{product.image}}" height="40px" width="auto" /></td>
+                <td>
+                    <a type="button" class="text-success" (click)="Edit(product.id)">Edit</a> |
+                    
+                    <a type="button" class="text-danger" (click)="Delete(product.id)">Delete</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
